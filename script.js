@@ -57,7 +57,7 @@ app.controller('calculator', function($scope) {
 			if (resultWasOnCurrent) $scope.ac();
 			
 			if (($scope.current === '0' && element === '0')
-				 || ($scope.current.endsWith('.') && element == '.'))
+				 || ($scope.current.indexOf('.') != -1 && element == '.'))
 				return;
 			
 			if (($scope.expressionList.length && symbols.has($scope.expressionList.last()))
