@@ -1,0 +1,148 @@
+$button-size: 60px;
+$press-depth: 3px;
+$hor-margin: 12px;
+$ver-margin: 8px;
+$press-time: 0.2s;
+$release-time: 0.3s;
+
+body {
+	background-color: #333;
+	
+	font-family: "Verdana";
+	
+	#calculator {
+		width: 276px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 20px;
+		
+		background-color: #E0E0E0;
+		border-radius: 14px;
+		box-shadow: 0px 17px 70px -1px rgba(0,0,0,0.75),
+			inset 0px -10px 30px -3px rgba(0,0,0,0.86);
+		
+		.title {
+			font-size: 0.9em;
+			font-weight: italic;
+		}
+		
+		.screen {
+			width: 100%;
+			height: 60px;
+			margin-top: 6px;
+			padding: 2px 8px;
+			box-sizing: border-box;
+			
+			background-color: #111;
+			border: 2px solid rgba(0,0,0,0.2);
+			border-radius: 4px;
+			box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.2);
+				//inset 0px -8px 16px -6px rgba(0,0,0,0.9);
+			
+			text-align: right;
+			font-family: "Lucida Console";
+			
+			.current {
+				margin-top: 6px;
+				
+				color: #AAA;
+				font-size: 2em;
+			}
+			
+			.expression {
+				color: #999;
+				font-size: 0.7em;
+			}
+		} // .screen
+		
+		.buttons {
+			margin-top: 20px;
+			
+			.row {
+				position: relative;
+				height: $button-size;
+				clear: both;
+				
+				&:not(:last-of-type) {
+					margin-bottom: $ver-margin;
+				}
+				
+				&.row-2 {
+					height: $button-size * 2 + 13px;
+				}
+				
+				span {
+					position: absolute;
+					display: inline-block;
+					width: $button-size;
+					height: $button-size;
+					top: 0;
+					padding-top: 16px;
+					box-sizing: border-box;
+
+					background-color: #D8D8D8;
+					border-radius: 3px;
+					box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4),
+						inset 0px -6px 4px -1px rgba(0, 0, 0, 0.15);
+					
+					text-align: center;
+					font-size: 1.2em;
+					font-weight: 700;
+					color: #333;
+					cursor: pointer;
+					
+					transition: height $release-time, top $release-time,
+						padding-top $release-time, box-shadow $release-time;
+
+					&:not(:last-of-type) {
+						margin-right: 8px;
+					}
+					
+					&:hover {
+						height: $button-size - $press-depth;
+						top: $press-depth;
+						
+						box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3),
+							inset 0px -1px 2px 0px rgba(0, 0, 0, 0.15);
+						
+						transition: height $press-time, top $press-time,
+							padding-top $press-time, box-shadow $press-time;
+					}
+					
+					@for $i from 1 through 4 {
+						&:nth-child(#{$i}) {
+							left: ($button-size * ($i - 1)) + ($hor-margin * ($i - 1));
+						}
+					}
+					
+					&.cell {
+						@for $i from 2 through 4 {
+							&-#{$i} {
+								left: ($button-size * ($i - 1)) + ($hor-margin * ($i - 1));
+							}
+						}
+					}
+					
+					&.cell-row-2 {
+						height: $button-size * 2 + $ver-margin;
+						padding-top: 48px;
+						
+						&:hover {
+							height: $button-size * 2 + $ver-margin - $press-depth;
+						}
+					}
+					
+					&.cell-col-2 {
+						width: $button-size * 2 + $hor-margin;
+					}
+				} // span
+			} // .row
+			
+			.col {
+				position: absolute;
+				display: inline-block;
+				top: 0;
+			}
+		} // .buttons
+	} // #calculator
+} // body

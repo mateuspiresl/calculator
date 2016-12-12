@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="author" content="Mateus Pires Lustosa">
+
+	    <link rel="stylesheet" type="text/css" href="style.css">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+		<script src="script.js"></script>
+	</head>
+
+	<body>
+		<div id="calculator" ng-app="calculator" ng-controller="calculator">
+			<div class="title">Neviat</div>
+			
+			<div class="screen">
+				<div class="current">{{ current }}</div>
+				<div class="expression">{{ expression }}</div>
+			</div>
+			
+			<div class="buttons">
+				<div class="row">
+					<span ng-click="ac()">AC</span>
+					<span ng-click="ce()">CE</span>
+					<span ng-click="button($event)">÷</span>
+					<span ng-click="button($event)">x</span>
+				</div>
+				
+				<div class="row">
+					<span ng-click="button($event)">7</span>
+					<span ng-click="button($event)">8</span>
+					<span ng-click="button($event)">9</span>
+					<span ng-click="button($event)">-</span>
+				</div>
+				
+				<div class="row">
+					<span ng-click="button($event)">4</span>
+					<span ng-click="button($event)">5</span>
+					<span ng-click="button($event)">6</span>
+					<span ng-click="button($event)">+</span>
+				</div>
+				
+				<div class="row row-2">
+					<div class="col">
+						<div class="row">
+							<span ng-click="button($event)">1</span>
+							<span ng-click="button($event)">2</span>
+							<span ng-click="button($event)">3</span>
+						</div>
+						
+						<div class="row">
+							<span class="cell-col-2" ng-click="button($event)">0</span>
+							<span class="cell-3" ng-click="button($event)">.</span>
+						</div>
+					</div>
+					
+					<div class="col">
+						<span class="cell-4 cell-row-2" ng-click="button($event)">=</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

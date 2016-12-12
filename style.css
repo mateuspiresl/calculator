@@ -1,0 +1,116 @@
+body {
+  background-color: #333;
+  font-family: "Verdana";
+}
+body #calculator {
+  width: 276px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #E0E0E0;
+  border-radius: 14px;
+  box-shadow: 0px 17px 70px -1px rgba(0, 0, 0, 0.75), inset 0px -10px 30px -3px rgba(0, 0, 0, 0.86);
+}
+body #calculator .title {
+  font-size: 0.9em;
+  font-weight: italic;
+}
+body #calculator .screen {
+  width: 100%;
+  height: 60px;
+  margin-top: 6px;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  background-color: #111;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  text-align: right;
+  font-family: "Lucida Console";
+}
+body #calculator .screen .current {
+  margin-top: 6px;
+  color: #AAA;
+  font-size: 2em;
+}
+body #calculator .screen .expression {
+  color: #999;
+  font-size: 0.7em;
+}
+body #calculator .buttons {
+  margin-top: 20px;
+}
+body #calculator .buttons .row {
+  position: relative;
+  height: 60px;
+  clear: both;
+}
+body #calculator .buttons .row:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+body #calculator .buttons .row.row-2 {
+  height: 133px;
+}
+body #calculator .buttons .row span {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  padding-top: 16px;
+  box-sizing: border-box;
+  background-color: #D8D8D8;
+  border-radius: 3px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4), inset 0px -6px 4px -1px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: height 0.3s, top 0.3s, padding-top 0.3s, box-shadow 0.3s;
+}
+body #calculator .buttons .row span:not(:last-of-type) {
+  margin-right: 8px;
+}
+body #calculator .buttons .row span:hover {
+  height: 57px;
+  top: 3px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3), inset 0px -1px 2px 0px rgba(0, 0, 0, 0.15);
+  transition: height 0.2s, top 0.2s, padding-top 0.2s, box-shadow 0.2s;
+}
+body #calculator .buttons .row span:nth-child(1) {
+  left: 0px;
+}
+body #calculator .buttons .row span:nth-child(2) {
+  left: 72px;
+}
+body #calculator .buttons .row span:nth-child(3) {
+  left: 144px;
+}
+body #calculator .buttons .row span:nth-child(4) {
+  left: 216px;
+}
+body #calculator .buttons .row span.cell-2 {
+  left: 72px;
+}
+body #calculator .buttons .row span.cell-3 {
+  left: 144px;
+}
+body #calculator .buttons .row span.cell-4 {
+  left: 216px;
+}
+body #calculator .buttons .row span.cell-row-2 {
+  height: 128px;
+  padding-top: 48px;
+}
+body #calculator .buttons .row span.cell-row-2:hover {
+  height: 125px;
+}
+body #calculator .buttons .row span.cell-col-2 {
+  width: 132px;
+}
+body #calculator .buttons .col {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+}
